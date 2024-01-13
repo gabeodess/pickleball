@@ -4,7 +4,7 @@ export default () => {
 
   return (
     <div>
-      <h1 className="display-4">Hello Wolrd</h1>
+      <h1 className="display-4">Hello World</h1>
     </div>
   )
 };
