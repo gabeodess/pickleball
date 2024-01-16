@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   namespace :api do
     resource :session, only: [:show]
     resources :users, only: [:show]
+    resources :groups, only: [:create, :index, :show] do
+      resources :messages, only: [:create, :index]
+      resources :members, only: [:create, :index]
+    end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
