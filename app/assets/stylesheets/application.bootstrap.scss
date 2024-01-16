@@ -2,3 +2,38 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 .fs-7 { font-size: 0.5em }
+
+.list-group-messages {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  flex-direction: column-reverse;
+  padding-bottom: 5em;
+  padding-top: 4em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  z-index: -1;
+
+  .list-group-item {
+    margin-bottom: 0.5em;
+    border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+    border-radius: inherit;
+
+    .signature {
+      position: absolute;
+      bottom: 0.5px;
+      font-size: 6px;
+      right: 5px;
+    }
+
+    &.right {
+      margin-left: 2em;
+    }
+
+    &.left {
+      margin-right: 2em;
+    }
+  }
+}

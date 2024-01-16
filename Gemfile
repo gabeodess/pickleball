@@ -71,6 +71,4 @@ group :test do
 end
 
 gem 'bcrypt'
-gem 'rollbar'
 gem 'web-push'
-

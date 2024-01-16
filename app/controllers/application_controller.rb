@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :authenticate!
 
-    helper_method :logged_in?
+    helper_method :logged_in?, :current_user
 
     def authenticate!
         redirect_to :new_session unless current_user
