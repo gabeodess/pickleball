@@ -1,0 +1,7 @@
+one:
+  email: foobar1@example.com
+  password_digest: $2a$12$yqMfTnq5jwqitFJPAEUdZejFZXWQQdJDL.KFu3Ow408NuM93SaHJi
+
+two:
+  email: foobar2@example.com
+  password_digest: $2a$12$yqMfTnq5jwqitFJPAEUdZejFZXWQQdJDL.KFu3Ow408NuM93SaHJi
