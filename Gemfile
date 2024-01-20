@@ -72,3 +72,5 @@ end
 
 gem 'bcrypt'
 gem 'web-push'
+
+gem "annotate", "~> 3.2", :group => :development
