@@ -5,26 +5,31 @@
 #  id              :bigint           not null, primary key
 #  email           :string
 #  password_digest :string
+#  phone           :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
 # Indexes
 #
 #  index_users_on_email  (email) UNIQUE
+#  index_users_on_phone  (phone) UNIQUE
 #
 class User < ApplicationRecord
-    has_secure_password
+  def self.find_by_email_or_phone(value)
+  end
 
-    has_many :pushers
-    has_many :owned_groups, class_name: :Group, foreign_key: :owner_id
-    has_many :group_members
-    has_many :groups, through: :group_members
+  has_secure_password
 
-    def first_name
-      email.split(/[^a-zA-Z]/).first
-    end
+  has_many :pushers
+  has_many :owned_groups, class_name: :Group, foreign_key: :owner_id
+  has_many :group_members
+  has_many :groups, through: :group_members
 
-    def as_json_v1
-      as_json(only: [:id, :email])
-    end
+  def first_name
+    email.split(/[^a-zA-Z]/).first
+  end
+
+  def as_json_v1
+    as_json(only: [:id, :email])
+  end
 end

@@ -22,11 +22,13 @@ export default () => {
 
     const response = await fetch(`/api/groups/${id}/members`, {
       method: 'post',
-      body: JSON.stringify({email}),
+      body: JSON.stringify({email_or_phone: email}),
       headers: {"Content-Type": "application/json"},  
     })
 
-    if([400, 422].includes(response.status)){
+    if(response.status === 400) {
+      alert("Something went wrong.  Please contact engineering.")
+    } else if(response.status === 422){
       body = await response.json();
       setErrors({...body.errors, error: body.error})
     } else {
@@ -65,7 +67,7 @@ export default () => {
             <input 
               name='email' 
               className={classNames("form-control", {"is-invalid": errors['email']})}
-              aria-label="Message"
+              aria-label="Email"
               placeholder="Enter email..."
               value={email}
               onChange={event => setEmail(event.target.value)}

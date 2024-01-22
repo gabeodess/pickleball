@@ -21,6 +21,7 @@ class Group < ApplicationRecord
   has_many :members, class_name: :GroupMember
   has_many :users, through: :members
   has_many :messages
+  has_many :invitations
 
   validates :name, presence: true
 end
