@@ -17,12 +17,12 @@ class Api::Dupr::SessionsControllerTest < ActionDispatch::IntegrationTest
       }
     }.to_json)
 
-    post('/api/dupr/session', params: {password: :foobar})
-    assert_response :created
+    put('/api/user', params: {user: {duprId: 123}})
+    assert_response :ok
 
     assert_changes "user.doubles", to: 4.0 do
       assert_changes "user.singles", to: 3.0 do
-        assert_changes "user.dupr_refresh_token", to: 'fake-refresh-token' do
+        assert_changes "user.dupr_id", to: 123 do
           user.reload
         end
       end

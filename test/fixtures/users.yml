@@ -2,15 +2,15 @@
 #
 # Table name: users
 #
-#  id                 :bigint           not null, primary key
-#  doubles            :float            default(0.0), not null
-#  dupr_refresh_token :string
-#  email              :string
-#  password_digest    :string
-#  phone              :string
-#  singles            :float            default(0.0), not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
+#  id              :bigint           not null, primary key
+#  doubles         :float            default(0.0), not null
+#  email           :string
+#  password_digest :string
+#  phone           :string
+#  singles         :float            default(0.0), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  dupr_id         :bigint
 #
 # Indexes
 #

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :session, only: [:show]
+    resource :user, only: [:update]
     resources :users, only: [:show]
     resources :groups, only: [:create, :index, :show] do
       resources :messages, only: [:create, :index]

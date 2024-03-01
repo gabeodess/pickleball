@@ -34,9 +34,6 @@ export default () => {
     <div>
       <h1 className="display-4">Hello World</h1>
 
-      <div>
-        
-      </div>
       <div className="list-group">
         {groups.map(group => (
           <Link key={group.id} to={`/groups/${group.id}/messages`} className="list-group-item list-group-item-action">{group.name}</Link>
